@@ -10,8 +10,8 @@ export class TemperaturePipe implements PipeTransform {
     inputType: 'cel' | 'fah',
     outputType?: 'cel' | 'fah'
   ) {
-    if(!value){
-        return value
+    if (!value) {
+      return value;
     }
     let val: number;
     if (typeof value === 'string') {
@@ -34,7 +34,7 @@ export class TemperaturePipe implements PipeTransform {
     } else {
       symbol = outputType === 'cel' ? 'C' : 'F';
     }
-    return `${outputTemp} ${symbol}`;
+    return `${outputTemp.toFixed(2)} ${symbol}`;
     // return outputTemp + 'F';
   }
 }
